@@ -1,0 +1,90 @@
+footer {
+    height: 15vh;
+    background-color: #1c1c1c; /* Cinza escuro moderno */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 1%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-wrap: wrap;
+    gap: 26rem; /* Mais espaço entre os blocos */
+}
+
+/* Esquerda */
+.footer-left p {
+    margin: 0;
+    font-size: 0.9rem;
+    max-width: 300px;
+    line-height: 1.5;
+}
+
+/* Centro */
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem; /* Espaço entre linhas de informações */
+    text-align: center;
+    min-width: 200px; /* Garantir espaço mínimo */
+}
+
+.footer-center p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.footer-center strong {
+    color: #e50914;
+}
+
+/* Direita */
+.footer-right {
+    display: flex;
+    gap: 1.2rem; /* Mais espaço entre ícones e botão */
+    align-items: center;
+}
+
+.footer-right a {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+    color: #e50914;
+}
+
+.footer-right button {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-right button:hover {
+    background-color: #b00610;
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem 3%;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    .footer-center {
+        gap: 0.8rem;
+    }
+    .footer-right {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}

@@ -1,0 +1,194 @@
+/* GRID DOS CARDS */
+#cards {
+    width: 80%;
+    padding: 2% 8%;
+    display: grid;
+    grid-template-columns: repeat(5, 18.4%);
+    gap: 3%;
+}
+
+/* CARD */
+.card {
+    width: 100%;
+    height: 35vh;
+    border-radius: 16px;
+    background: url(https://m.media-amazon.com/images/I/51NiGlapXlL._AC_.jpg) center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* OVERLAY */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* fade do meio para baixo */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%);
+    transition: background 0.3s ease;
+}
+
+/* HOVER: overlay mais escuro para destacar a descricao */
+.card:hover::before {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+/* HOVER: zoom + sombra */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* INFORMACOES NORMAIS VISIVEIS */
+.card h1,
+.descricao_card,
+.numeros_card {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* DESCRICAO EXTRA OCULTA POR PADRAO */
+.descricao_extra {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* centraliza vertical e horizontal */
+    text-align: center;
+    font-style: italic;
+    font-size: 16px;
+    font-family: "Roboto Mono", monospace;
+    padding: 0 10px;
+    color: #fff;
+    quotes: "“" "”";
+}
+
+/* Adiciona aspas antes e depois do texto */
+.descricao_extra::before {
+    content: open-quote;
+}
+
+.descricao_extra::after {
+    content: close-quote;
+}
+
+/* HOVER: ocultar infos normais e mostrar descricao extra */
+.card:hover h1,
+.card:hover .descricao_card,
+.card:hover .numeros_card {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.card:hover .descricao_extra {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+/* TITULO */
+.card h1 {
+    font-size: 22px;
+    font-family: "Raleway", sans-serif;
+    margin: 0 0 6px;
+    padding: 0 10px;
+    text-shadow: 0 0 10px #000, 0 0 5px #000, 0 0 16px #000;
+}
+
+/* DESCRIÇÃO */
+.descricao_card {
+    padding: 0 10px 10px;
+}
+
+.descricao_card h5,
+.descricao_card h6 {
+    margin: 5px 0;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.descricao_card h5{
+    font-size: 16px;
+}
+
+/* NUMEROS */
+.numeros_card {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.numeros_card p#imdb {
+    color: gold;
+    transition: text-shadow 0.3s ease;
+}
+
+.numeros_card p#rotten {
+    color: #e63946;
+    transition: text-shadow 0.3s ease;
+}
+
+/* BRILHO NOS NÚMEROS AO HOVER */
+.card:hover .numeros_card p#imdb {
+    text-shadow: 0 0 8px gold;
+}
+
+.card:hover .numeros_card p#rotten {
+    text-shadow: 0 0 8px #e63946;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1200px) {
+    #cards {
+        grid-template-columns: repeat(4, 22%);
+    }
+}
+
+@media (max-width: 992px) {
+    #cards {
+        grid-template-columns: repeat(3, 30%);
+    }
+}
+
+@media (max-width: 768px) {
+    #cards {
+        grid-template-columns: repeat(2, 48%);
+    }
+
+    .card h1 {
+        font-size: 20px;
+    }
+
+    .descricao_card h5,
+    .descricao_card h6 {
+        font-size: 12px;
+    }
+
+    .numeros_card {
+        font-size: 11px;
+    }
+
+    .descricao_extra {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #cards {
+        grid-template-columns: 100%;
+    }
+}

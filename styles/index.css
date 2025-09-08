@@ -1,0 +1,16 @@
+@import url(./footer.css);
+@import url(./header.css);
+@import url(./main.css);
+@import url(./cards.css);
+
+body{
+    margin: 0;
+    padding: 0;
+      background: linear-gradient(to bottom, #333333, #000000);
+    color: #fff; /* Ajuste o texto se necessário */
+}
+
+
+
+
+
