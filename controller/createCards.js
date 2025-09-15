@@ -1,21 +1,20 @@
+import { buscarInformacoes } from "../services/cards_services.js";
+
 const cardsSection = document.getElementById("cards");
 
-export function createCards() {
-    for (let i = 0; i < 25; i++) {
+export async function createCards() {
+    let bdCards = await buscarInformacoes();
+    for (let i = 0; i < bdCards.length; i++) {
 
         let card = document.createElement("div");
         card.className = "card";
 
-        const imagensTeste = [
-            "https://m.media-amazon.com/images/I/51NiGlapXlL._AC_.jpg",
-        ];
 
-
-        card.style.backgroundImage = `url(${imagensTeste[i]})`;
+        card.style.backgroundImage = `url(${bdCards[i].imagem})`;
 
 
         let titulo = document.createElement("h1");
-        titulo.textContent = "Título do Filme";
+        titulo.textContent = bdCards[i].nome;
         card.appendChild(titulo);
 
 
@@ -23,11 +22,11 @@ export function createCards() {
         descricaoCard.className = "descricao_card";
 
         let produtor = document.createElement("h5");
-        produtor.textContent = "Produtor";
+        produtor.textContent = bdCards[i].diretor;
         descricaoCard.appendChild(produtor);
 
         let genero = document.createElement("h6");
-        genero.textContent = "Gênero";
+        genero.textContent = bdCards[i].genero;
         descricaoCard.appendChild(genero);
 
 
@@ -35,18 +34,15 @@ export function createCards() {
         numeros.className = "numeros_card";
 
         let tempo = document.createElement("p");
-        tempo.id = "tempo";
-        tempo.innerHTML = `<i class="fa-regular fa-clock" style="color:#fff;"></i> 2h`;
+        tempo.innerHTML = `<i class="fa-regular fa-clock" style="color:#fff;"></i> ${bdCards[i].duracao}`;
         numeros.appendChild(tempo);
 
         let imdb = document.createElement("p");
-        imdb.id = "imdb";
-        imdb.innerHTML = `<i class="fa-solid fa-star" style="color:#FFD43B;"></i> 8.0`;
+        imdb.innerHTML = `<i class="fa-solid fa-star" style="color:#FFD43B;"></i> ${bdCards[i].nota_imdb}`;
         numeros.appendChild(imdb);
 
         let rotten = document.createElement("p");
-        rotten.id = "rotten";
-        rotten.innerHTML = `<i class="fa-solid fa-apple-whole" style="color:#e00000;"></i> 94%`;
+        rotten.innerHTML = `<i class="fa-solid fa-apple-whole" style="color:#e00000;"></i> ${bdCards[i].avaliacao_rotten_tomatoes}`;
         numeros.appendChild(rotten);
 
         descricaoCard.appendChild(numeros);
@@ -55,7 +51,7 @@ export function createCards() {
 
         let descricaoExtra = document.createElement("div");
         descricaoExtra.className = "descricao_extra";
-        descricaoExtra.textContent = "Descrição detalhada do card.";
+        descricaoExtra.textContent = bdCards[i].descricao;
         card.appendChild(descricaoExtra);
 
 
