@@ -16,6 +16,7 @@ export function filtrar(filtro) {
 }
 
 export function ordenarIMDB() {
+    
     let contagem = bd.length - 1;
     for (let voltas = 0; voltas < bd.length; voltas++) {
         for (let i = 0; i < contagem; i++) {

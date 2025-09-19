@@ -24,6 +24,7 @@ header {
 }
 
 .nav-links a {
+    cursor: pointer;
     color: #fff;
     text-decoration: none;
     font-weight: 500;

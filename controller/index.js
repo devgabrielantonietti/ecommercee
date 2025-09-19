@@ -12,3 +12,9 @@ document.addEventListener("DOMContentLoaded", async ()=>{
     attBD(await buscarInformacoes());
     createCards('');
 });
+
+const btnHome = document.getElementById("btnHome");
+
+btnHome.addEventListener("click", () => {
+    location.reload();
+});
