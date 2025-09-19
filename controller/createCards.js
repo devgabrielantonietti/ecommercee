@@ -1,12 +1,10 @@
-import { buscarInformacoes } from "../services/cards_services.js";
 import { filtrar } from "./filtro.js";
 
 const cardsSection = document.getElementById("cards");
 
 export async function createCards(filtro) {
     cardsSection.innerHTML = '';
-    let bdCards = await buscarInformacoes();
-    bdCards = filtrar(filtro, bdCards);
+    let bdCards = filtrar(filtro);
     for (let i = 0; i < bdCards.length; i++) {
 
         let card = document.createElement("div");

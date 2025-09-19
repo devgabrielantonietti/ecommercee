@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,69 +13,76 @@
             rel="stylesheet">
         <script src="https://kit.fontawesome.com/5b228279f3.js"
             crossorigin="anonymous"></script>
-            
     </head>
+
     <body>
         <header>
             <div class="logo">
                 <h2>MyFlix</h2>
             </div>
+
             <nav class="nav-links">
                 <a onclick="createCards('')">Home</a>
-                <a onclick="createCards('Drama')">Drama</a>
-                <a>Séries</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Gêneros</button>
+                    <div class="dropdown-content">
+                        <a onclick="createCards('Ação')">Ação</a>
+                        <a onclick="createCards('Comédia')">Comédia</a>
+                        <a onclick="createCards('Drama')">Drama</a>
+                        <a onclick="createCards('Terror')">Terror</a>
+                        <a onclick="createCards('Romance')">Romance</a>
+                        <a onclick="createCards('Animação')">Animação</a>
+                        <a onclick="createCards('Sci-Fi')">Sci-Fi</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Avaliação</button>
+                    <div class="dropdown-content">
+                        <a onclick="ordenarIMDB()">IMDB</a>
+                        <a onclick="ordenarRotten()">Rotten</a>
+                            
+                    </div>
+                </div>
+
                 <a>Top</a>
                 <a>Novidades</a>
             </nav>
+
             <div class="login">
                 <button>Login</button>
             </div>
         </header>
+
         <main>
             <section id="cards">
-                <!-- <div class="card">
-                    <h1>Um Sonho de Liberdade</h1>
-                    <div class="descricao_card">
-                        <h5>Produtor</h5>
-                        <h6>Genero</h6>
-                        <div class="numeros_card">
-                            <p id="tempo"><i class="fa-regular fa-clock"
-                                    style="color: #ffffff;"></i>2h</p>
-                            <p id="imdb"><i class="fa-solid fa-star"
-                                    style="color: #FFD43B;"></i>8.0</p>
-                            <p id="rotten"><i class="fa-solid fa-apple-whole"
-                                    style="color: #e00000;"></i>94%</p>
-                        </div>
-                    </div>
-                    <div class="descricao_extra">
-                        Esta é a descrição detalhada do card. Aqui você pode
-                        colocar mais informações sobre o filme ou produto.
-                    </div> -->
+                <!-- Cards aparecem aqui via JS -->
             </section>
         </main>
-        <footer>
-                <div class="footer-left">
-                    <p>Catálogo de filmes e séries, com notas e avaliações para
-                        ajudar você a escolher o que assistir.</p>
-                </div>
-                <div class="footer-center">
-                    <div class="footer-categories">
-                        <p><strong>Gêneros Populares:</strong> Ação, Comédia,
-                            Drama, Sci-Fi, Animação</p>
-                    </div>
-                    <div class="footer-stats">
-                        <p>🎬 1.200 Filmes | ⭐ Avaliação Média: 8.2</p>
-                    </div>
-                </div>
-                <div class="footer-right">
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                    <button>Fale conosco</button>
-                </div>
-        </footer>
-        <script type="module" src="./controller/index.js"></script>
 
+        <footer>
+            <div class="footer-left">
+                <p>Catálogo de filmes e séries, com notas e avaliações para
+                    ajudar você a escolher o que assistir.</p>
+            </div>
+            <div class="footer-center">
+                <div class="footer-categories">
+                    <p><strong>Gêneros Populares:</strong> Ação, Comédia,
+                        Drama, Sci-Fi, Animação</p>
+                </div>
+                <div class="footer-stats">
+                    <p>🎬 1.200 Filmes | ⭐ Avaliação Média: 8.2</p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <button>Fale conosco</button>
+            </div>
+        </footer>
+
+        <script type="module" src="./controller/index.js"></script>
     </body>
+
 </html>

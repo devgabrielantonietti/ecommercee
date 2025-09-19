@@ -120,7 +120,7 @@
     font-weight: normal;
 }
 
-.descricao_card h5{
+.descricao_card h5 {
     font-size: 16px;
 }
 
@@ -192,4 +192,4 @@
     #cards {
         grid-template-columns: 100%;
     }
-}
+}   

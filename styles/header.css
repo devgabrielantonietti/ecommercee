@@ -58,3 +58,60 @@ header {
         display: none; /* futuramente menu hamburguer */
     }
 }
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+/* Botão do dropdown (mesmo estilo dos links normais) */
+.dropbtn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hover igual aos outros links */
+.dropbtn:hover {
+    color: #e50914; /* Vermelho Netflix-style */
+    transform: scale(1.05);
+}
+
+/* Conteúdo do dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2a2a2a;
+    min-width: 160px;
+    top: 100%; /* aparece logo abaixo do botão */
+    left: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    border-radius: px;
+    z-index: 99;
+}
+
+/* Links do dropdown */
+.dropdown-content a {
+    color: #fff;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover nos links internos */
+.dropdown-content a:hover {
+    background-color: #4b4b4b;
+    transform: translateX(4px);
+    border-radius: 10px;
+}
+
+/* Mostrar dropdown ao passar o mouse */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
