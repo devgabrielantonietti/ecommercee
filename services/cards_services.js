@@ -1,4 +1,4 @@
-const apiUrl = 'api-sigma-wheat.vercel.app/filmes'
+const apiUrl = 'https://api-sigma-wheat.vercel.app/filmes'
 export async function buscarInformacoes() {
 
     try {
