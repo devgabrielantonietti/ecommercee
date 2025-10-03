@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000/filmes'
+const apiUrl = 'api-onj1h4uda-gabriels-projects-152cf1e7.vercel.app'
 export async function buscarInformacoes() {
 
     try {
